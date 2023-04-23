@@ -1,0 +1,374 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(#F7FD04, #F9B208);
+  padding: 3rem;
+  overflow-x: hidden;
+}
+
+.section {
+  width: 100%;
+  height: 70vh;
+  background: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section__wrapper {
+  width: 100%;
+}
+
+.main {
+  width: 100%;
+  height: 85vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgb(255, 255, 255);
+  padding-right: 7rem;
+}
+
+.Left__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Right__section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5rem;
+}
+
+.left__cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 40.9rem;
+  list-style: none;
+  gap: 2rem;
+}
+
+.left__card {
+  position: relative;
+}
+
+.left__card::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  color: white !important;
+}
+
+.date {
+  display: flex;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  top: 5%;
+  right: 5%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.title {
+  display: flex;
+  position: absolute;
+  width: 14rem;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  bottom: 0;
+  left: 2%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.img__sizes {
+  cursor: pointer;
+  object-fit: cover;
+  display: flex;
+  height: 18rem;
+  width: 18rem;
+}
+
+.header {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  flex-grow: 1;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  gap: 2rem;
+}
+
+.header__happiness {
+  font-size: 4rem;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.description__header {
+  background-color: gray;
+  margin-top: 10rem;
+  height: 26rem;
+  width: 100%;
+}
+
+.description__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  width: 100%;
+  font-size: 20px;
+  z-index: 1;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Audio__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5%;
+  border: none;
+  height: 3rem;
+  width: 18rem;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 1.4rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.source__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  cursor: pointer;
+  text-align: end;
+  font-size: 2.8rem;
+}
+
+a:link,
+a:visited {
+  color: #000000;
+  text-decoration: none;
+}
+
+footer {
+  background: white;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.mijn__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* Media query voor schermen met een maximale breedte van 62.5rem */
+@media screen and (max-width: 62.5rem) {
+  header {
+    height: 7vh;
+    background: white;
+  }
+  body {
+    height: auto;
+    background: linear-gradient(#F9B208, #F7FD04);
+    padding: 2rem;
+    margin: 0;
+  }
+  .section {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .section__wrapper {
+    width: 100%;
+  }
+  .main {
+    width: 100%;
+    height: 153vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow-x: hidden;
+    flex-direction: column;
+  }
+  .Left__section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 0%;
+    margin-top: 33rem;
+    position: absolute;
+  }
+  .left__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    height: 1rem;
+    width: 26.9rem;
+    cursor: pointer;
+  }
+  .date {
+    display: flex;
+    position: absolute;
+    padding-left: 11rem;
+    padding-bottom: 15rem;
+    color: white;
+  }
+  .title {
+    display: flex;
+    position: absolute;
+    padding-right: 14rem;
+    padding-top: 15rem;
+    color: white;
+  }
+  .img__sizes {
+    cursor: pointer;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12rem;
+    width: 12rem;
+    flex-grow: unset;
+    background-color: red;
+  }
+  .profile__pic {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+    height: 2rem;
+    font-size: 1.8rem;
+    z-index: 1;
+    font-family: "Ubuntu", sans-serif;
+    background-color: red;
+  }
+  .header__happiness {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+  .Right__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    width: 134%;
+  }
+  .description__header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: gray;
+    width: 300%;
+    height: 38rem;
+    z-index: 1;
+    position: relative;
+    top: -10rem;
+  }
+  .description__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 110%;
+    font-size: 1.8rem;
+    overflow: scroll;
+    position: relative;
+    bottom: 6rem;
+    right: 4rem;
+  }
+  .buttonWrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 111%;
+    z-index: 1;
+    gap: 2rem;
+  }
+  .Audio__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5%;
+    border: none;
+    height: 3rem;
+    width: 14rem;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 1.4rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+  .source__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    cursor: pointer;
+    font-size: 2.8rem;
+    gap: 1rem;
+  }
+  a:link,
+a:visited {
+    color: #000000;
+    text-decoration: none;
+  }
+  footer {
+    display: flex;
+    height: 100%;
+    background: white;
+    padding: 2.5rem;
+  }
+  .mijn__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.5rem;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

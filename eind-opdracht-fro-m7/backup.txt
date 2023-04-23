@@ -1,0 +1,127 @@
+class RightSection{
+    mainElement;
+
+    
+    constructor(mainElement, data) {
+        this.mainElement = document.getElementsByTagName(mainElement)[0];
+       
+        this.rightSectionElement = document.createElement("section");
+        this.rightSectionElement.classList = "section Right__section";
+
+        this.headerElement = document.createElement("div");
+        this.headerElement.classList = "description__header";
+
+        this.dateElement = document.createElement("h3");
+        this.dateElement.classList = "description__date";
+
+        this.titleElement = document.createElement("h3");
+        this.titleElement.classList = "description__title";
+
+        this.textElement = document.createElement("p");
+        this.textElement.classList = "description__text";
+
+        this.buttonElement = document.createElement("div");
+        this.buttonElement.classList = "buttonWrapper";
+
+        this.buttonAudioElement = document.createElement("button");
+        this.buttonAudioElement.classList = "Audio__button";
+
+        this.buttonSourceElement = document.createElement("a");
+        this.buttonSourceElement.classList = "source__button";
+        
+
+        this.headerElement.style.backgroundImage = "url(" + data.img + ")";
+        
+
+        textElement.innerText = data[Math.floor(random)].summary;
+    }
+
+    render() {
+
+        this.rightSectionElement.appendChild(this.headerElement);
+        this.headerElement.appendChild(this.dateElement);
+        this.dateElement.appendChild(this.titleElement);
+        this.titleElement.appendChild(this.textElement);
+        this.textElement.appendChild(this.buttonElement);
+        this.buttonElement.appendChild(this.buttonAudioElement);
+        this.buttonAudioElement.appendChild(this.buttonSourceElement);
+        this.mainElement.appendChild(this.rightSectionElement);
+        
+    }
+    
+ }
+
+
+
+
+
+    generateImages(mainElement, data) {
+         const ul = document.createElement("ul");
+         
+        for (let i = 1; i <= 4; i++) {
+            const random = Math.random() * 7;
+           const cardsElement = document.createElement("li");
+           const img = document.createElement("img");
+           const pText = document.createElement("p");
+           const pDate = document.createElement("p");
+            
+            cardsElement.classList = "left__card";
+            img.classList = "img__sizes";
+            pDate.classList = "date";
+            pText.classList = "title";
+
+            img.src = data[Math.floor(random)].img;
+            pText.innerText = data[Math.floor(random)].title;
+            pDate.innerText = data[Math.floor(random)].date;        
+
+
+            cardsElement.appendChild(img);
+            cardsElement.appendChild(pDate);
+            cardsElement.appendChild(pText);
+
+            cardsElement.addEventListener('click', function (event) { 
+                // hier roep je een functie aan die de right section beinvloed.
+                
+                //RightSection aanroepen met mainElement en data
+         const rightSection = new RightSection("main", data);
+            rightSection.render();
+            });
+            ul.appendChild(cardsElement); 
+            
+        }
+        this.cardsElement.appendChild(ul);
+     }
+
+
+
+
+
+      class Main{
+     placeToRenderMain;
+     leftSection;
+     mainElement;
+    //  rightSection;
+
+     constructor(placeToRenderMain) {
+         this.placeToRenderMain = document.getElementsByTagName(placeToRenderMain)[0];
+       
+
+          this.mainElement = document.createElement("main");
+          this.mainElement.classList = "main";
+
+       
+         //this.rightSection = new RightSection(this.mainElement, this);
+     }
+
+    //  makeButtonsFrom(data) {
+    //      this.rightSection.makeButtonsFrom(data);
+    //  }
+
+
+     render() {
+         this.placeToRenderMain.appendChild(this.mainElement);
+         this.leftSection = new LeftSection(this.mainElement);
+         this.leftSection.generateImages();
+         this.rightSection.render();
+    }
+ }
